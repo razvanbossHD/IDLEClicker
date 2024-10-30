@@ -1,8 +1,8 @@
 package graphics;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.*;
-import javafx.scene.control.*;
-import javafx.scene.text.*;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 public class Buttons
 {

@@ -1,13 +1,19 @@
 package clicker;
-import graphics.Select;
+import clicker.Afisare.Test;
+import clicker.Metode.ButoaneEcran;
+import graphics.Buttons;
 import graphics.Ui;
-import javafx.scene.layout.Pane;
 public class Clicker{
-    static Pane pane = Ui.pane;
+    static void init()
+    {
+        ButoaneEcran butoane = new ButoaneEcran(Buttons.add(Test::increment,"Clicker",120,100,600,200));
+        butoane.addButon(Buttons.add(Test::increment,"Clicker",120,100,600,400));
+        butoane.addButon(Buttons.add(Test::increment,"Clicker",120,100,1260,780));
+    }
     public static void start()
     {
-    pane.getChildren().clear();
-    Select.selecter();
-    System.out.println("Clickerul");
+    Ui.pane.getChildren().clear();
+    init();
+
     }
 }
