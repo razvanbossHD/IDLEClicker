@@ -11,6 +11,7 @@ import javafx.stage.*;
 import javafx.geometry.*;
 import javafx.event.*;
 import input.*;
+import time.*;
 public class Ui extends Application{
     public static Pane pane = new Pane();
     @Override
@@ -20,6 +21,7 @@ public class Ui extends Application{
     pane.setStyle("-fx-background-color: #000000;");
     Scene scene = new Scene(pane, 1920, 1080);
     Select.selecter();
+    Loop.loop();
     Key.initiate(scene);
     stage.setScene(scene);
     stage.setTitle("IDLEClicker");
