@@ -1,9 +1,7 @@
 package graphics;
 import javafx.scene.control.Button;
 public class Select{
-    static Button clickler = null;
-    static Button roguelike = null;
-    static Button fishing = null;
+    static Button b = null;
 
     static void select()
     {
@@ -13,8 +11,6 @@ public class Select{
 
     public static void selecter()
     {
-        clickler = Buttons.add(Select::select,"test",200,100,800,0);
-        roguelike = Buttons.add(Select::selectroguelike,"test",200,100,800,0);
-        fishing = Buttons.add(Select::select,"test",200,100,800,0);
+    b = Buttons.add(Select::select,"test",200,100,800,0);
     }
 }
