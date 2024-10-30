@@ -1,5 +1,6 @@
 package clicker;
-import graphics.*;
+import graphics.Select;
+import graphics.Ui;
 import javafx.scene.layout.Pane;
 public class Clicker{
     static Pane pane = Ui.pane;
@@ -7,6 +8,6 @@ public class Clicker{
     {
     pane.getChildren().clear();
     Select.selecter();
-    System.out.println("Clicker");
+    System.out.println("Clickerul");
     }
 }
