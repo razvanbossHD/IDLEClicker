@@ -1,5 +1,7 @@
 package clicker.Metode;
 
+import java.util.Random;
+
 import javafx.scene.control.Button;
 
 public class ButoaneEcran {
@@ -62,4 +64,14 @@ public class ButoaneEcran {
         buttons[index] = buton;
     }
     public int getNr(){return nr;}
+
+    public void Aleator(int index) {
+        
+        Random rand = new Random();
+
+        buttons[index].setLayoutX(rand.nextInt(600, 1260));
+        buttons[index].setLayoutY(rand.nextInt(200, 780));
+        System.out.println("da");
+    }
+
 }

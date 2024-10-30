@@ -1,16 +1,9 @@
 package graphics;
-import javafx.application.*;
-import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.input.*;
-import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.scene.shape.*;
-import javafx.stage.*;
-import javafx.geometry.*;
-import javafx.event.*;
-import input.*;
+import input.Key;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 public class Ui extends Application{
     public static Pane pane = new Pane();
     @Override
