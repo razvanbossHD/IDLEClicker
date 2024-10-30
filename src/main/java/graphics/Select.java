@@ -1,7 +1,10 @@
 package graphics;
+import battle;
 import javafx.scene.control.Button;
 public class Select{
-    static Button b = null;
+    static Button clickler = null;
+    static Button roguelike = null;
+    static Button fishing = null;
 
     static void select()
     {
@@ -11,6 +14,8 @@ public class Select{
 
     public static void selecter()
     {
-    b = Buttons.add(Select::select,"test",200,100,800,0);
+        clickler = Buttons.add(Select::select,"test",200,100,800,0);
+        roguelike = Buttons.add(Battle::start,"test",200,100,800,0);
+        fishing = Buttons.add(Select::select,"test",200,100,800,0);
     }
 }
