@@ -2,19 +2,18 @@ package Fishing;
 
 import java.util.Random;
 
+import graphics.Buttons;
 import graphics.Select;
 import graphics.Ui;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
-public class Fishing  {
+public class Fishing {
     private static Button fishButton;
     private static Button upgradeSpeedButton;
     private static Button upgradeRarityButton;
@@ -33,24 +32,23 @@ public class Fishing  {
     private static Timeline timer;
 
     public static void start() {
-        
         Ui.pane.getChildren().clear();
-    Select.selecter();
+        Select.selecter();
 
-        fishButton = new Button("Pescuiește!");
-        fishButton.setOnAction(e -> fishAction());
-
-        upgradeSpeedButton = new Button("Upgrade viteză (" + upgradeSpeedCost + " puncte)");
-        upgradeSpeedButton.setOnAction(e -> upgradeSpeedAction());
-
-        upgradeRarityButton = new Button("Upgrade șanse pești (" + upgradeRarityCost + " puncte)");
-        upgradeRarityButton.setOnAction(e -> upgradeRarityAction());
+        fishButton = Buttons.add(() -> fishAction(), "Pescuiește!", 200, 50, 100, 50);
+        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " puncte)", 200, 50, 100, 120);
+        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " puncte)", 200, 50, 100, 190);
 
         resultLabel = new Label("Prinde un pește!");
         scoreLabel = new Label("Scor: 0");
         upgradeLabel = new Label("Putere click: " + clickPower);
 
         progressBar = new ProgressBar(0);
+        progressBar.setPrefWidth(300);
+        progressBar.setLayoutX(100);
+        progressBar.setLayoutY(300);
+
+        Ui.pane.getChildren().addAll(resultLabel, scoreLabel, upgradeLabel, progressBar);
 
         timer = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
             if (progressBar.getProgress() > 0) {
@@ -60,11 +58,14 @@ public class Fishing  {
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
 
-        HBox upgradeButtons = new HBox(10, upgradeSpeedButton, upgradeRarityButton);
-        upgradeButtons.setAlignment(Pos.CENTER);
+        resultLabel.setTextFill(Color.RED);
 
-        VBox layout = new VBox(10, fishButton, upgradeButtons, resultLabel, scoreLabel, upgradeLabel, progressBar);
-        layout.setAlignment(Pos.CENTER);
+        resultLabel.setLayoutX(100);
+        resultLabel.setLayoutY(360);
+        scoreLabel.setLayoutX(100);
+        scoreLabel.setLayoutY(390);
+        upgradeLabel.setLayoutX(100);
+        upgradeLabel.setLayoutY(420);
     }
 
     private static void fishAction() {
