@@ -1,40 +1,38 @@
-package com.example.proiect32;
+package Fishing;
 
+import java.util.Random;
+
+import graphics.Select;
+import graphics.Ui;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.util.Random;
+public class Fishing  {
+    private static Button fishButton;
+    private static Button upgradeSpeedButton;
+    private static Button upgradeRarityButton;
+    private static Label resultLabel;
+    private static Label scoreLabel;
+    private static Label upgradeLabel;
+    private static ProgressBar progressBar;
+    public static int score = 0;
+    private static int clickPower = 10;
+    private static int upgradeSpeedCost = 50;
+    private static int upgradeRarityCost = 100;
+    private static int regressionRate = 10;
+    private static int commonFishChance = 50;
+    private static int rareFishChance = 35;
+    private static int legendaryFishChance = 15;
+    private static Timeline timer;
 
-public class Fishing extends Application {
-    private Button fishButton;
-    private Button upgradeSpeedButton;
-    private Button upgradeRarityButton;
-    private Label resultLabel;
-    private Label scoreLabel;
-    private Label upgradeLabel;
-    private ProgressBar progressBar;
-    private int score = 0;
-    private int clickPower = 10;
-    private int upgradeSpeedCost = 50;
-    private int upgradeRarityCost = 100;
-    private int regressionRate = 10;
-    private int commonFishChance = 50;
-    private int rareFishChance = 35;
-    private int legendaryFishChance = 15;
-    private Timeline timer;
-
-    @Override
-    public void start(Stage primaryStage) {
+    public static void start() {
         
         Ui.pane.getChildren().clear();
     Select.selecter();
@@ -67,13 +65,9 @@ public class Fishing extends Application {
 
         VBox layout = new VBox(10, fishButton, upgradeButtons, resultLabel, scoreLabel, upgradeLabel, progressBar);
         layout.setAlignment(Pos.CENTER);
-
-        Scene scene = new Scene(layout, 400, 400);
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
-    private void fishAction() {
+    private static void fishAction() {
         double currentValue = progressBar.getProgress();
         progressBar.setProgress(Math.min(currentValue + clickPower / 100.0, 1.0));
 
@@ -85,7 +79,7 @@ public class Fishing extends Application {
         }
     }
 
-    private String catchFish() {
+    private static String catchFish() {
         Random rand = new Random();
         int chance = rand.nextInt(100);
 
@@ -101,7 +95,7 @@ public class Fishing extends Application {
         }
     }
 
-    private void upgradeSpeedAction() {
+    private static void upgradeSpeedAction() {
         if (score >= upgradeSpeedCost) {
             score -= upgradeSpeedCost;
             clickPower += 5;
@@ -115,7 +109,7 @@ public class Fishing extends Application {
         }
     }
 
-    private void upgradeRarityAction() {
+    private static void upgradeRarityAction() {
         if (score >= upgradeRarityCost) {
             score -= upgradeRarityCost;
             if (commonFishChance > 30) {
