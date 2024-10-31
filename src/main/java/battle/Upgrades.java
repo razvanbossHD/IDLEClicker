@@ -1,5 +1,5 @@
 package battle;
-import java.util.*;
+import java.util.Random;
 public class Upgrades
 {
     double val = 1;
@@ -50,7 +50,7 @@ public class Upgrades
     }
     public void HP()
     {
-    double x = ;
+    //double x = ;
     if(Battle.money > (hp * (10 + (hp/10))))
     hp++;
     }
@@ -61,7 +61,7 @@ public class Upgrades
     }
     public void SPD()
     {
-    if(Clicker.bani > (spd * (10 + (spd / 10)))
+    //if(Clicker.bani > (spd * (10 + (spd / 10)))
     spd++;
     }
     public void CHN()

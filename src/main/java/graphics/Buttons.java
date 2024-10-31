@@ -22,4 +22,19 @@ public class Buttons
     pane.getChildren().add(button);
     return button;
     }
+    public static Button add(Wild method,String text,double w,double h, double x, double y, String ID)
+    {
+    button = new Button (text);
+    button.setPrefWidth(w);
+    button.setPrefHeight(h);
+    button.setLayoutX(x);
+    button.setLayoutY(y);
+    button.setStyle("-fx-background-color: #ffffff; ");
+    button.setTextFill(Color.web("#000000"));
+    button.setFont(new Font("Hack",32));
+    button.setOnAction(event -> method.run());
+    button.setId(ID);
+    pane.getChildren().add(button);
+    return button;
+    }
 }

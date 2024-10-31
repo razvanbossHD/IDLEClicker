@@ -2,6 +2,7 @@ package clicker.Metode;
 
 import java.util.Random;
 
+import clicker.Clicker;
 import javafx.scene.control.Button;
 
 public class ButoaneEcran {
@@ -14,51 +15,66 @@ public class ButoaneEcran {
     public ButoaneEcran(Button buton) {
         nr=0;
         buttons[0] = buton;
-        buttons[0].setOnAction(event->{Aleator(0);});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        Aleator(0);
         nr=1;
     }
     public ButoaneEcran(Button buton1, Button buton2) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        Aleator(1);
         nr=2;
     }
     public ButoaneEcran(Button buton1, Button buton2, Button buton3) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        Aleator(1);
         buttons[2] = buton3;
-        buttons[2].setOnAction(event->{Aleator(2);});
+        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=1;});
+        Aleator(2);
         nr=3;
     }
     public ButoaneEcran(Button buton1, Button buton2, Button buton3, Button buton4) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        Aleator(1);
         buttons[2] = buton3;
-        buttons[2].setOnAction(event->{Aleator(2);});
+        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=1;});
+        Aleator(2);
         buttons[3] = buton4;
-        buttons[3].setOnAction(event->{Aleator(3);});
+        buttons[3].setOnAction(event->{Aleator(3);Clicker.bani+=1;});
+        Aleator(3);
         nr=4;
     }
     public ButoaneEcran(Button buton1, Button buton2, Button buton3, Button buton4, Button buton5) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        Aleator(1);
         buttons[2] = buton3;
-        buttons[2].setOnAction(event->{Aleator(2);});
+        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=1;});
+        Aleator(2);
         buttons[3] = buton4;
-        buttons[3].setOnAction(event->{Aleator(3);});
+        buttons[3].setOnAction(event->{Aleator(3);Clicker.bani+=1;});
+        Aleator(3);
         buttons[4] = buton5;
-        buttons[4].setOnAction(event->{Aleator(4);});
+        buttons[4].setOnAction(event->{Aleator(4);Clicker.bani+=1;});
+        Aleator(4);
         nr=5;
     }
     public void addButon(Button buton)
@@ -66,6 +82,8 @@ public class ButoaneEcran {
         if(nr<5)
         {   
             buttons[nr] = buton;
+            buttons[nr].setOnAction(event->{Aleator(4);Clicker.bani+=1;});
+            Aleator(nr);
             nr++;
         }
         return;
@@ -86,7 +104,6 @@ public class ButoaneEcran {
 
         buttons[index].setLayoutX(rand.nextInt(600, 1260));
         buttons[index].setLayoutY(rand.nextInt(200, 780));
-        System.out.println("da");
     }
 
 }

@@ -1,7 +1,8 @@
 package battle;
-import graphics.*;
-import time.*;
+import graphics.Select;
+import graphics.Ui;
 import javafx.scene.layout.Pane;
+import time.Loop;
 public class Battle{
     public static double money = 0;
     static Pane pane = Ui.pane;
@@ -9,7 +10,7 @@ public class Battle{
     {
     pane.getChildren().clear();
     Select.selecter();
-    Loop.m = 1;
+    Loop.minigame = 1;
     }
     public static void loop()
     {

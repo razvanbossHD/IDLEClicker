@@ -12,26 +12,26 @@ import javafx.scene.control.skin.ButtonSkin;
 import javafx.scene.layout.Pane;
 
 public class ButoaneUpgrade {
-    private LinkedList<Button> buttons = new LinkedList<Button>();
+    private Button[] buttons = new Button[1000];
+    private int max=1000;
+    private int size=0;
     public void addButton() {
-        buttons.add(Buttons.add(Test::increment,"Clicker"+buttons.size(),250,100,1620, 30+(130*buttons.size())));
-        int index=buttons.size()-1;
-        buttons.get(index).setOnAction(event->{Sterge(index);});
+        buttons[size]=Buttons.add(Test::increment,"Clicker"+size,250,100,1620, 30+(130*size), Integer.toString(size));
+        buttons[size].setOnAction(event->{Sterge(Integer.parseInt(buttons[size].getId()));});
+        size++;
     }
 
-    public LinkedList<Button> getButtons() {
-        return buttons;
+    public Button getButtons(int index) {
+        return buttons[index];
     }
     public void Sterge(int index){
-        Button but=buttons.get(index);
-        Ui.pane.getChildren().remove(but);
-        buttons.remove(index);
+        size--;
         int i;
-        for(i=index; i<buttons.size()-1; ++i)
-        {   
-            buttons.get(i).setLayoutY((buttons.get(i).getLayoutY())-130);
+        for(i=index;i<size;i++){
+            buttons[i]=buttons[i+1];
         }
-        System.out.println(buttons);
+        Clicker.label.setText(buttons.toString());
+        Ui.pane.getChildren().remove(buttons[0]);
     }
-    public int marime(){return buttons.size();}
+    public int marime(){return size;}
 }
