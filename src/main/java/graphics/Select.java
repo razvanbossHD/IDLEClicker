@@ -1,7 +1,7 @@
 package graphics;
 import battle.*;
 import clicker.*;
-import fishing.*;
+import Fishing.*;
 import javafx.scene.control.Button;
 public class Select{
     static Button clickler = null;
