@@ -3,6 +3,7 @@ import graphics.*;
 import time.*;
 import javafx.scene.layout.Pane;
 public class Battle{
+    public static double money = 0;
     static Pane pane = Ui.pane;
     public static void start()
     {
@@ -12,5 +13,6 @@ public class Battle{
     }
     public static void loop()
     {
+
     }
 }

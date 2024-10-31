@@ -1,9 +1,7 @@
 package graphics;
 import javafx.scene.shape.*;
-import javafx.stage.*;
-import javafx.geometry.*;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.*;
+
 public class Rectangles
 {
     static Pane pane = Ui.pane;

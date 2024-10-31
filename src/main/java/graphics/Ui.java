@@ -1,15 +1,8 @@
 package graphics;
 import javafx.application.*;
 import javafx.scene.*;
-import javafx.scene.control.*;
-import javafx.scene.image.*;
-import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.scene.shape.*;
 import javafx.stage.*;
-import javafx.geometry.*;
-import javafx.event.*;
 import input.*;
 import time.*;
 public class Ui extends Application{

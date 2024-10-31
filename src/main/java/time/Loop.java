@@ -3,7 +3,7 @@ import javafx.animation.AnimationTimer;
 import battle.*;
 public class Loop{
     public static AnimationTimer time = null;
-    static double fps = 60.0;
+    static double fps = 100.0;
     static double frame = 1000000000.0 / fps;
     public static int m = 0;
     public static void loop()
