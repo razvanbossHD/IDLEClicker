@@ -1,21 +1,37 @@
 package battle;
-import graphics.Select;
-import graphics.Ui;
+import graphics.*;
+import time.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Pane;
+import javafx.scene.control.*;
 import time.Loop;
 public class Battle{
     public static double money = 0;
+    static Label L = null;
     public static Upgrades up = new Upgrades();
     static Pane pane = Ui.pane;
+    static double cd = 0;
     public static void start()
     {
     pane.getChildren().clear();
     BMenu.UPG();
     Select.selecter();
-    Loop.minigame = 1;
+    Loop.m = 1;
     }
     public static void loop()
     {
-    System.out.println(up.val);
+    pane.getChildren().remove(L);
+    L = Labels.add(""+money,50,10,32);
+    cd++;
+    if(cd >= 100/up.upSpd())
+    {
+    cd = 0;
+    Fight.damage();
+    if(Fight.hp <= 0)
+    {money = money + up.upVal();
+    Fight.hp = up.upHp();
+    System.out.println(Fight.hp);
+    }
+    }
     }
 }

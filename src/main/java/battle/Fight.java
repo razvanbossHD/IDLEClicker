@@ -1,9 +1,10 @@
 package battle;
 public class Fight
 {
-    double hp = Battle.up.upHp();
+    static double hp = Battle.up.upHp();
     public static void damage()
     {
-    return;
+    hp = hp - Battle.up.upDam();
+    BMenu.HP();
     }
 }
