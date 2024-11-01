@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.util.Duration;
 import time.Loop;
 
@@ -35,20 +36,39 @@ public class Fishing {
     public static void start() {
         Ui.pane.getChildren().clear();
         Select.selecter();
-        Loop.minigame=2;
+        Loop.minigame = 2;
 
         double centerX = Ui.pane.getWidth() / 2 - 100; 
         double centerY = Ui.pane.getHeight() / 2 - 25;
 
+        
+
+        
         fishButton = Buttons.add(() -> fishAction(), "Pescuiește!", 200, 50, centerX, centerY);
-        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " puncte)", 200, 50, 100, 120);
-        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " puncte)", 200, 50, 100, 190);
+
+        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " puncte)", 250, 50, 50, 120);
+        upgradeSpeedButton.setFont(new Font("Arial", 12));  
+
+        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " puncte)", 250, 50, 50, 190);
+        upgradeRarityButton.setFont(new Font("Arial", 12)); 
 
         resultLabel = new Label("Prinde un pește!");
-        scoreLabel = new Label("Scor: 0");
-        upgradeLabel = new Label("Putere click: " + clickPower);
+        resultLabel.setFont(new Font("Arial", 24)); 
+        resultLabel.setTextFill(Color.WHITE); 
+        resultLabel.setLayoutX(centerX - 50); 
+        resultLabel.setLayoutY(centerY + 120);
 
-       
+        scoreLabel = new Label("Scor: 0");
+        scoreLabel.setFont(new Font("Arial", 24)); 
+        scoreLabel.setTextFill(Color.WHITE); 
+        scoreLabel.setLayoutX(10); 
+        scoreLabel.setLayoutY(10);
+
+        upgradeLabel = new Label("Putere click: " + clickPower);
+        upgradeLabel.setTextFill(Color.WHITE); 
+        upgradeLabel.setLayoutX(50);
+        upgradeLabel.setLayoutY(250);
+
         progressBar = new ProgressBar(0);
         progressBar.setPrefWidth(300);
         progressBar.setLayoutX(centerX - 50); 
@@ -63,15 +83,6 @@ public class Fishing {
         }));
         timer.setCycleCount(Timeline.INDEFINITE);
         timer.play();
-
-        resultLabel.setTextFill(Color.RED);
-
-        resultLabel.setLayoutX(100);
-        resultLabel.setLayoutY(360);
-        scoreLabel.setLayoutX(100);
-        scoreLabel.setLayoutY(390);
-        upgradeLabel.setLayoutX(100);
-        upgradeLabel.setLayoutY(420);
     }
 
     private static void fishAction() {
@@ -82,7 +93,21 @@ public class Fishing {
             String caughtFish = catchFish();
             resultLabel.setText("Ai prins un " + caughtFish + "!");
             scoreLabel.setText("Scor: " + score);
-            progressBar.setProgress(0);
+
+    
+            switch (caughtFish) {
+                case "pește comun (10 puncte)":
+                    resultLabel.setTextFill(Color.RED); 
+                    break;
+                case "pește rar (25 puncte)":
+                    resultLabel.setTextFill(Color.BLUE); 
+                    break;
+                case "pește legendar (50 puncte)":
+                    resultLabel.setTextFill(Color.GOLD); 
+                    break;
+            }
+
+            progressBar.setProgress(0); 
         }
     }
 
@@ -102,13 +127,14 @@ public class Fishing {
         }
     }
 
+
     private static void upgradeSpeedAction() {
         if (score >= upgradeSpeedCost) {
             score -= upgradeSpeedCost;
             clickPower += 5;
             regressionRate = Math.max(regressionRate - 2, 1);
             upgradeSpeedCost += 50;
-            upgradeSpeedButton.setText("Upgrade viteză (" + upgradeSpeedCost + " puncte)");
+            upgradeSpeedButton.setText("Upgrade Viteză (" + upgradeSpeedCost + " puncte)");
             upgradeLabel.setText("Putere click: " + clickPower);
             scoreLabel.setText("Scor: " + score);
         } else {
