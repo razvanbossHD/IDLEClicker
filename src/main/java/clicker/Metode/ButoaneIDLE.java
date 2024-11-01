@@ -1,7 +1,6 @@
 package clicker.Metode;
 
 import clicker.Clicker;
-import fishing.Fishing;
 import graphics.Buttons;
 import graphics.Labels;
 import javafx.scene.control.Button;
@@ -27,10 +26,11 @@ public class ButoaneIDLE {
         idlelable[0] = Labels.add("Cost:"+(Clicker.numarbutoane)*50+"Bani",1520, 200, 20);
         idlelable[0].setStyle("-fx-text-fill: red; -fx-font-size: 16px;");
         buttons[1]=Buttons.add(EfectButoane::Upgrade2,"Bps+",350,150,1520, 400);
-        buttonslable[1] = Labels.add("Cost:"+(Clicker.cp)*50+"Bani",1520, 400, 20);
+        buttonslable[1] = Labels.add("Cost:"+((int)Clicker.cp)*50+"Bani",1520, 400, 20);
         buttonslable[1].setStyle("-fx-text-fill: red; -fx-font-size: 16px;");
         buttons[2]=Buttons.add(EfectButoane::Upgrade3,"Clickuri+",350,150,1520, 600);
-        buttonslable[2] = Labels.add("Cost:"+(Fishing.score-=Clicker.cp)*50+"Bani", 1520, 600, 20);
+        buttonslable[2] = Labels.add("Cost:"+((int)Clicker.bpsmultiplier)*50+"Bani", 1520, 600, 20);
+        buttonslable[2].setStyle("-fx-text-fill: red; -fx-font-size: 16px;");
     }
     
 }

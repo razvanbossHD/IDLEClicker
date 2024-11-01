@@ -23,7 +23,7 @@ public class EfectButoane {
         {   
             Clicker.bps++;
             Battle.money-=(Clicker.bpsmoney+1)*50;
-            Clicker.idle.idlelable[1].setText("Cost:"+(Clicker.bpsmoney+1)*50+"Scor");
+            Clicker.idle.idlelable[1].setText("Cost:"+(Clicker.bpsmoney+1)*50+"Money");
         }
     }
     public static void Idle3()
@@ -39,7 +39,7 @@ public class EfectButoane {
         {   Clicker.butoane.buttons[Clicker.numarbutoane].setVisible(true);
             Clicker.numarbutoane++;
             Clicker.bani-=Clicker.numarbutoane*50;
-            Clicker.idle.buttonslable[0].setText("Cost:"+(Clicker.numarbutoane*50)+"Bani");
+            Clicker.idle.buttonslable[0].setText("Cost:"+((int)Clicker.numarbutoane*50)+"Bani");
         }
         
     }
@@ -48,14 +48,14 @@ public class EfectButoane {
         if(Battle.money>=(Clicker.cp*50))
         {   Clicker.cp++;
             Battle.money-=Clicker.cp*50;
-            Clicker.idle.buttonslable[1].setText("Cost:"+(Clicker.cp*50)+"Bani");
+            Clicker.idle.buttonslable[1].setText("Cost:"+((int)Clicker.cp*50)+"Money");
         }
     }
     public static void Upgrade3()
     {   if(Fishing.score>=(Clicker.bpsmultiplier*50))
         {   Clicker.bpsmultiplier++;
             Fishing.score-=Clicker.cp*50;
-            Clicker.idle.buttonslable[2].setText("Cost:"+(Clicker.bpsmultiplier*50)+"Bani");
+            Clicker.idle.buttonslable[2].setText("Cost:"+((int)Clicker.bpsmultiplier*50)+"Score");
         }
     }
     
