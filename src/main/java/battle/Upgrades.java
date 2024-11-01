@@ -1,9 +1,10 @@
 package battle;
-import graphics.*;
-import clicker.*;
-import fishing.*;
-import java.util.*;
-import javafx.scene.control.*;
+import java.util.Random;
+
+import clicker.Clicker;
+import graphics.Labels;
+import graphics.Ui;
+import javafx.scene.control.Label;
 public class Upgrades
 {
     Label L = new Label();
