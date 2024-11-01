@@ -1,4 +1,4 @@
-package Fishing;
+package fishing;
 
 import java.util.Random;
 

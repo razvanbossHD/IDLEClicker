@@ -20,6 +20,7 @@ public class Battle{
     }
     public static void loop()
     {
+    BMenu.cost();
     pane.getChildren().remove(L);
     L = Labels.add(""+money,50,10,32);
     cd++;
