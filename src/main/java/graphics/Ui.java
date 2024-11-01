@@ -4,6 +4,11 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+<<<<<<< Updated upstream
+=======
+import save.Write;
+import time.Loop;
+>>>>>>> Stashed changes
 public class Ui extends Application{
     public static Pane pane = new Pane();
     @Override
@@ -12,6 +17,7 @@ public class Ui extends Application{
     pane.setPrefSize(1920, 1080);
     pane.setStyle("-fx-background-color: #000000;");
     Scene scene = new Scene(pane, 1920, 1080);
+    Write.load();
     Select.selecter();
     Key.initiate(scene);
     stage.setScene(scene);

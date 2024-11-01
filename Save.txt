@@ -1,0 +1,1 @@
+Bani=4val=1.0hp=1.0dam=1.0spd=1.0chn=0.0cri=0.0
