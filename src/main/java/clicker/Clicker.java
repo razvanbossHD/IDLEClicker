@@ -1,55 +1,38 @@
 package clicker;
 import clicker.Metode.ButoaneEcran;
 import clicker.Metode.ButoaneIDLE;
+import clicker.Metode.ButoaneUpgrade;
 import graphics.Buttons;
-import graphics.Labels;
-import graphics.Select;
 import graphics.Ui;
-import javafx.scene.control.Label;
-import save.Write;
-import time.Loop;
 public class Clicker{
     public static ButoaneEcran butoane;
+    public static ButoaneUpgrade upgradelist= new ButoaneUpgrade();
     public static ButoaneIDLE idle;
-    public static double bani=0;
-    public static Label label;
-    public static int frame=0;
-    public static double secunda=0;
-    public static double bps=0;
-    public static double cp=1;
+    public static double bani;
     static void temp()
     {
         butoane.Aleator(0);
     }
-    static void initial()
+    static void init()
     {   /*int nr=Read.Nrbutoanerandom();
         for (int i = 0; i < nr; i++) {
             
             butoane.Aleator(0);
         }*/ButoaneEcran butoane = new ButoaneEcran(Buttons.add(Clicker::temp,"Clicker",120,100,1260,200), Buttons.add(Clicker::temp,"Clicker",120,100,600,200));
         idle=new ButoaneIDLE();
+<<<<<<< Updated upstream
+        for (int i = 0; i < 10; i++) {
+            upgradelist.addButton();
+        }
+        upgradelist.Sterge(2);
+        
+=======
         label= Labels.add("Bani:"+bani, 10, 10, 20);
-        Write.save();
-        Write.load();
+>>>>>>> Stashed changes
     }
     public static void start()
     {
     Ui.pane.getChildren().clear();
-    Select.selecter();
-    Loop.minigame=2;
-    initial();
-    }
-    public static void loop() {
-        
-
-        if(frame%10==0)
-           label.setText("Bani:"+bani);
-        if(frame==100)
-           bani+=bps;
-        if(frame>100)
-        {
-            frame=0;
-        }
-        frame++;
+    init();
     }
 }
