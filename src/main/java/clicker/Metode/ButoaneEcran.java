@@ -15,65 +15,65 @@ public class ButoaneEcran {
     public ButoaneEcran(Button buton) {
         nr=0;
         buttons[0] = buton;
-        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=Clicker.cp;});
         Aleator(0);
         nr=1;
     }
     public ButoaneEcran(Button buton1, Button buton2) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=Clicker.cp;});
         Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=Clicker.cp;});
         Aleator(1);
         nr=2;
     }
     public ButoaneEcran(Button buton1, Button buton2, Button buton3) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=Clicker.cp;});
         Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=Clicker.cp;});
         Aleator(1);
         buttons[2] = buton3;
-        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=1;});
+        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=Clicker.cp;});
         Aleator(2);
         nr=3;
     }
     public ButoaneEcran(Button buton1, Button buton2, Button buton3, Button buton4) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=Clicker.cp;});
         Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=Clicker.cp;});
         Aleator(1);
         buttons[2] = buton3;
-        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=1;});
+        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=Clicker.cp;});
         Aleator(2);
         buttons[3] = buton4;
-        buttons[3].setOnAction(event->{Aleator(3);Clicker.bani+=1;});
+        buttons[3].setOnAction(event->{Aleator(3);Clicker.bani+=Clicker.cp;});
         Aleator(3);
         nr=4;
     }
     public ButoaneEcran(Button buton1, Button buton2, Button buton3, Button buton4, Button buton5) {
         nr=0;
         buttons[0] = buton1;
-        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=1;});
+        buttons[0].setOnAction(event->{Aleator(0);Clicker.bani+=Clicker.cp;});
         Aleator(0);
         buttons[1] = buton2;
-        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=1;});
+        buttons[1].setOnAction(event->{Aleator(1);Clicker.bani+=Clicker.cp;});
         Aleator(1);
         buttons[2] = buton3;
-        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=1;});
+        buttons[2].setOnAction(event->{Aleator(2);Clicker.bani+=Clicker.cp;});
         Aleator(2);
         buttons[3] = buton4;
-        buttons[3].setOnAction(event->{Aleator(3);Clicker.bani+=1;});
+        buttons[3].setOnAction(event->{Aleator(3);Clicker.bani+=Clicker.cp;});
         Aleator(3);
         buttons[4] = buton5;
-        buttons[4].setOnAction(event->{Aleator(4);Clicker.bani+=1;});
+        buttons[4].setOnAction(event->{Aleator(4);Clicker.bani+=Clicker.cp;});
         Aleator(4);
         nr=5;
     }

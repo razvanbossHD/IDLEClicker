@@ -6,6 +6,7 @@ import graphics.Labels;
 import graphics.Select;
 import graphics.Ui;
 import javafx.scene.control.Label;
+import save.Write;
 import time.Loop;
 public class Clicker{
     public static ButoaneEcran butoane;
@@ -14,6 +15,8 @@ public class Clicker{
     public static Label label;
     public static int frame=0;
     public static double secunda=0;
+    public static double bps=0;
+    public static double cp=1;
     static void temp()
     {
         butoane.Aleator(0);
@@ -26,6 +29,8 @@ public class Clicker{
         }*/ButoaneEcran butoane = new ButoaneEcran(Buttons.add(Clicker::temp,"Clicker",120,100,1260,200), Buttons.add(Clicker::temp,"Clicker",120,100,600,200));
         idle=new ButoaneIDLE();
         label= Labels.add("Bani:"+bani, 10, 10, 20);
+        Write.save();
+        Write.load();
     }
     public static void start()
     {
@@ -39,6 +44,8 @@ public class Clicker{
 
         if(frame%10==0)
            label.setText("Bani:"+bani);
+        if(frame==100)
+           bani+=bps;
         if(frame>100)
         {
             frame=0;

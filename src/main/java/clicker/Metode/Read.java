@@ -14,9 +14,10 @@ public class Read {
       while (myReader.hasNextLine()) {
         String data = myReader.nextLine();
         if(data.contains("Nrbutoanerandom:"))
-            return Integer.parseInt(myReader.nextLine());
-        else return 1;
+            return Integer.parseInt(data);
+        
       }
+
       myReader.close();
     } catch (FileNotFoundException e) {
       System.out.println("An error occurred.");
@@ -24,6 +25,4 @@ public class Read {
     }
         return 1;
     }
-
-
 }
