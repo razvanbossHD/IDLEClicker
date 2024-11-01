@@ -22,7 +22,7 @@ public class Battle{
     {
     BMenu.cost();
     pane.getChildren().remove(L);
-    L = Labels.add(""+money,50,10,32);
+    L = Labels.add("Money: "+(int)money,50,10,32);
     cd++;
     if(cd >= 100/up.upSpd())
     {
