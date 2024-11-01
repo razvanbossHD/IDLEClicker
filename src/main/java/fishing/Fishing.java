@@ -20,17 +20,17 @@ public class Fishing {
     private static Button upgradeSpeedButton;
     private static Button upgradeRarityButton;
     private static Label resultLabel;
-    private static Label scoreLabel;
-    private static Label upgradeLabel;
+    public static Label scoreLabel;
+    public static Label upgradeLabel;
     private static ProgressBar progressBar;
     public static int score = 0;
     private static int clickPower = 10;
-    private static int upgradeSpeedCost = 50;
-    private static int upgradeRarityCost = 100;
+    public static int upgradeSpeedCost = 50;
+    public static int upgradeRarityCost = 100;
     private static int regressionRate = 10;
-    private static int commonFishChance = 50;
-    private static int rareFishChance = 35;
-    private static int legendaryFishChance = 15;
+    public static int commonFishChance = 50;
+    public static int rareFishChance = 35;
+    public static int legendaryFishChance = 15;
     private static Timeline timer;
 
     public static void start() {
