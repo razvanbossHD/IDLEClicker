@@ -24,7 +24,7 @@ public class Fishing {
     public static Label upgradeLabel;
     private static ProgressBar progressBar;
     public static int score = 0;
-    private static int clickPower = 10;
+    public static int clickPower = 10;
     public static int upgradeSpeedCost = 50;
     public static int upgradeRarityCost = 100;
     private static int regressionRate = 10;

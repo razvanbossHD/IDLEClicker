@@ -1,6 +1,8 @@
 package clicker.Metode;
 
+import battle.Battle;
 import clicker.Clicker;
+import fishing.Fishing;
 
 public class EfectButoane {
     
@@ -18,19 +20,30 @@ public class EfectButoane {
     }
     public static void Upgrade1()
     {
-        Clicker.cp++;
+        if(Clicker.numarbutoane<5&&(Clicker.bani>=Clicker.numarbutoane*50))
+        {   Clicker.butoane.buttons[Clicker.numarbutoane].setVisible(true);
+            Clicker.numarbutoane++;
+            Clicker.bani-=Clicker.numarbutoane*50;
+        }
+        
     }
     public static void Upgrade2()
-    {
-        Clicker.cp++;
+    {   
+        if(Battle.money>=(Clicker.cp*50))
+        {   Clicker.cp++;
+            Battle.money-=Clicker.cp*50;
+        }
     }
     public static void Upgrade3()
-    {
-        Clicker.cp++;
+    {   if(Fishing.score>=(Clicker.bpsmultiplier*50))
+        {   Clicker.bpsmultiplier++;
+            Battle.money-=Clicker.cp*50;
+        }
     }
-    public static void Upgrade4()
+    
+    public static void click()
     {
-        Clicker.cp++;
+        Clicker.butoane.Aleator(0);
     }
 
 

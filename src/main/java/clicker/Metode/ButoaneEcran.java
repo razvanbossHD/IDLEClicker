@@ -77,17 +77,19 @@ public class ButoaneEcran {
         Aleator(4);
         nr=5;
     }
-    public void addButon(Button buton)
+    public void add(Button buton)
     {
         if(nr<5)
         {   
             buttons[nr] = buton;
-            buttons[nr].setOnAction(event->{Aleator(4);Clicker.bani+=1;});
+            buttons[nr].setOnAction(event->{Aleator(nr);Clicker.bani+=1;});
             Aleator(nr);
             nr++;
         }
-        return;
     }
+    
+    public Boolean isNotFull(){return nr<5;}
+    public Boolean isFull(){return nr>=5;}
     
     public Button getButton(int index) {
     
@@ -104,6 +106,7 @@ public class ButoaneEcran {
 
         buttons[index].setLayoutX(rand.nextInt(600, 1260));
         buttons[index].setLayoutY(rand.nextInt(200, 780));
+        System.out.println("da");
     }
 
 }

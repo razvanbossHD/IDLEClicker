@@ -1,15 +1,10 @@
 package clicker.Metode;
 
-import javafx.scene.control.Button;
-
-import java.util.LinkedList;
-
+import clicker.Afisare.Test;
 import clicker.Clicker;
 import graphics.Buttons;
-import clicker.Afisare.*;
 import graphics.Ui;
-import javafx.scene.control.skin.ButtonSkin;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.Button;
 
 public class ButoaneUpgrade {
     private Button[] buttons = new Button[1000];
@@ -34,4 +29,6 @@ public class ButoaneUpgrade {
         Ui.pane.getChildren().remove(buttons[0]);
     }
     public int marime(){return size;}
+    public Boolean isNotFull(){return size<5;}
+    public Boolean isFull(){return size>=5;}
 }

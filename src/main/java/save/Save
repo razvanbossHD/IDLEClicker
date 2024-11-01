@@ -1,0 +1,15 @@
+Bani=4.0
+val=1.0
+hp=1.0
+dam=1.0
+spd=1.0
+chn=1.0
+cri=1.0
+money=17.14
+score=0
+clickPower=10
+upgradeSpeedCost=50
+upgradeRarityCost=100
+commonFishChance=50
+rareFishChance=35
+legendaryFishChance=15
