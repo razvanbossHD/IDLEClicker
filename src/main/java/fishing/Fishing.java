@@ -58,7 +58,7 @@ public class Fishing {
         resultLabel.setLayoutX(centerX - 50); 
         resultLabel.setLayoutY(centerY + 120);
 
-        scoreLabel = new Label("Scor: 0");
+        scoreLabel = new Label("Scor: "+score);
         scoreLabel.setFont(new Font("Arial", 24)); 
         scoreLabel.setTextFill(Color.WHITE); 
         scoreLabel.setLayoutX(10); 
