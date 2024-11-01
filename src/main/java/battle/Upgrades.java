@@ -1,5 +1,9 @@
 package battle;
 import java.util.Random;
+
+import clicker.Clicker;
+import graphics.Labels;
+import graphics.Ui;
 import fishing.*;
 import clicker.*;
 import javafx.scene.control.Label;
@@ -56,6 +60,9 @@ public class Upgrades
     if(Battle.money > x)
     {val++;
      Battle.money -=x;
+     x = (val * (10 + (val/5)));
+     Ui.pane.getChildren().remove(L);
+     L = Labels.add(""+x,50,150,32);
     }
     }
     public void HP()
@@ -64,6 +71,9 @@ public class Upgrades
     if(Battle.money > x)
     {hp++;
     Battle.money -=x;
+    x = (hp * (10 + (hp/10)));
+    Ui.pane.getChildren().remove(L);
+    L = Labels.add(""+x,50,300,32);
     }
     }
     public void DAM()
