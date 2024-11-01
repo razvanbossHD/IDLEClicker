@@ -48,10 +48,10 @@ public class Fishing {
         
         fishButton = Buttons.add(() -> fishAction(), "Pescuiește!", 200, 50, centerX, centerY);
 
-        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " puncte)", 250, 50, 50, 120);
+        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " money)", 250, 50, 50, 120);
         upgradeSpeedButton.setFont(new Font("Arial", 12));  
 
-        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " puncte)", 250, 50, 50, 190);
+        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " bani)", 250, 50, 50, 190);
         upgradeRarityButton.setFont(new Font("Arial", 12)); 
 
         resultLabel = new Label("Prinde un pește!");
