@@ -21,9 +21,12 @@ public class Clicker{
     public static double bpsmultiplier=1;
     public static double cp=1;
     public static int numarbutoane=1;
+    public static int bpsbani=0;
+    public static int bpsmoney=0;
+    public static int bpsscore=0;
     static void initial()
     {   
-        butoane = new ButoaneEcran(Buttons.add(EfectButoane::click,"Clicker",120,100,1260,200), Buttons.add(EfectButoane::click,"Clicker",120,100,1260,200), Buttons.add(EfectButoane::click,"Clicker",120,100,1260,200), Buttons.add(EfectButoane::click,"Clicker",120,100,1260,200), Buttons.add(EfectButoane::click,"Clicker",120,100,1260,200));
+        butoane = new ButoaneEcran(Buttons.add(EfectButoane::click,"",120,100,1260,200), Buttons.add(EfectButoane::click,"",120,100,1260,200), Buttons.add(EfectButoane::click,"",120,100,1260,200), Buttons.add(EfectButoane::click,"",120,100,1260,200), Buttons.add(EfectButoane::click,"",120,100,1260,200));
         for(int i=numarbutoane;i<5;++i)
             butoane.buttons[i].setVisible(false);
         idle=new ButoaneIDLE();

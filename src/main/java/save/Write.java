@@ -25,6 +25,27 @@ public class Write {
                 case "Bani=":
                     Clicker.bani = Double.parseDouble(data.replaceAll("[^\\d\\.]", ""));
                     break;
+                case "bps=":
+                    Clicker.bps = Double.parseDouble(data.replaceAll("[^\\d\\.]", ""));
+                    break;
+                case "bpsmultiplier=":
+                    Clicker.bpsmultiplier = Double.parseDouble(data.replaceAll("[^\\d\\.]", ""));
+                    break;
+                case "cp=":
+                    Clicker.cp = Double.parseDouble(data.replaceAll("[^\\d\\.]", ""));
+                    break;
+                case "numarbutoane=":
+                    Clicker.numarbutoane = Integer.parseInt(data.replaceAll("[^\\d\\.]", ""));
+                    break;
+                case "bpsbani=":
+                    Clicker.bpsbani = Integer.parseInt(data.replaceAll("[^\\d\\.]", ""));
+                    break;
+                case "bpsmoney=":
+                    Clicker.bpsmoney = Integer.parseInt(data.replaceAll("[^\\d\\.]", ""));
+                    break;
+                case "bpsscore=":
+                    Clicker.bpsscore = Integer.parseInt(data.replaceAll("[^\\d\\.]", ""));
+                    break;
                 case "val=":
                     Battle.up.val = Double.parseDouble(data.replaceAll("[^\\d\\.]", ""));
                     break;
@@ -83,6 +104,13 @@ public class Write {
             try {
                 FileWriter myWriter = new FileWriter("src\\main\\java\\save\\Save");
                 myWriter.write("Bani="+Clicker.bani+"\n");
+                myWriter.write("bps="+Clicker.bps+"\n");
+                myWriter.write("bpsmultiplier="+Clicker.bpsmultiplier+"\n");
+                myWriter.write("cp="+Clicker.cp+"\n");
+                myWriter.write("numarbutoane="+Clicker.numarbutoane+"\n");
+                myWriter.write("bpsbani="+Clicker.bpsbani+"\n");
+                myWriter.write("bpsmoney="+Clicker.bpsmoney+"\n");
+                myWriter.write("bpsscore="+Clicker.bpsscore+"\n");
                 myWriter.write("val="+Battle.up.val+"\n");
                 myWriter.write("hp="+Battle.up.hp+"\n");
                 myWriter.write("dam="+Battle.up.dam+"\n");
