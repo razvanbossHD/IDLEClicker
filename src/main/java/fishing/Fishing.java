@@ -2,8 +2,6 @@ package fishing;
 
 import java.util.Random;
 
-import battle.Battle;
-import clicker.Clicker;
 import graphics.Buttons;
 import graphics.Select;
 import graphics.Ui;
@@ -48,10 +46,10 @@ public class Fishing {
         
         fishButton = Buttons.add(() -> fishAction(), "Pescuiește!", 200, 50, centerX, centerY);
 
-        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " money)", 250, 50, 50, 120);
+        upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " puncte)", 250, 50, 50, 120);
         upgradeSpeedButton.setFont(new Font("Arial", 12));  
 
-        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " bani)", 250, 50, 50, 190);
+        upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " puncte)", 250, 50, 50, 190);
         upgradeRarityButton.setFont(new Font("Arial", 12)); 
 
         resultLabel = new Label("Prinde un pește!");
@@ -60,7 +58,7 @@ public class Fishing {
         resultLabel.setLayoutX(centerX - 50); 
         resultLabel.setLayoutY(centerY + 120);
 
-        scoreLabel = new Label("Scor: "+score);
+        scoreLabel = new Label("Scor: 0");
         scoreLabel.setFont(new Font("Arial", 24)); 
         scoreLabel.setTextFill(Color.WHITE); 
         scoreLabel.setLayoutX(10); 
@@ -131,32 +129,32 @@ public class Fishing {
 
 
     private static void upgradeSpeedAction() {
-        if (Battle.money >= upgradeSpeedCost) {
-            Battle.money -= upgradeSpeedCost;
+        if (score >= upgradeSpeedCost) {
+            score -= upgradeSpeedCost;
             clickPower += 5;
             regressionRate = Math.max(regressionRate - 2, 1);
             upgradeSpeedCost += 50;
-            upgradeSpeedButton.setText("Upgrade Viteză (" + upgradeSpeedCost + " money)");
+            upgradeSpeedButton.setText("Upgrade Viteză (" + upgradeSpeedCost + " puncte)");
             upgradeLabel.setText("Putere click: " + clickPower);
             scoreLabel.setText("Scor: " + score);
         } else {
-            resultLabel.setText("Nu ai suficiente money pentru upgrade!");
+            resultLabel.setText("Nu ai suficiente puncte pentru upgrade!");
         }
     }
 
     private static void upgradeRarityAction() {
-        if (Clicker.bani >= upgradeRarityCost) {
-            Clicker.bani -= upgradeRarityCost;
+        if (score >= upgradeRarityCost) {
+            score -= upgradeRarityCost;
             if (commonFishChance > 30) {
                 commonFishChance -= 5;
                 rareFishChance += 3;
                 legendaryFishChance += 2;
             }
             upgradeRarityCost += 100;
-            upgradeRarityButton.setText("Upgrade șanse pești (" + upgradeRarityCost + " bani)");
+            upgradeRarityButton.setText("Upgrade șanse pești (" + upgradeRarityCost + " puncte)");
             scoreLabel.setText("Scor: " + score);
         } else {
-            resultLabel.setText("Nu ai suficiente bani pentru upgrade!");
+            resultLabel.setText("Nu ai suficiente puncte pentru upgrade!");
         }
     }
 }
