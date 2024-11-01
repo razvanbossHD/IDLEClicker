@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import time.Loop;
 
 public class Fishing {
     private static Button fishButton;
@@ -34,8 +35,12 @@ public class Fishing {
     public static void start() {
         Ui.pane.getChildren().clear();
         Select.selecter();
+        Loop.minigame=2;
 
-        fishButton = Buttons.add(() -> fishAction(), "Pescuiește!", 200, 50, 100, 50);
+        double centerX = Ui.pane.getWidth() / 2 - 100; 
+        double centerY = Ui.pane.getHeight() / 2 - 25;
+
+        fishButton = Buttons.add(() -> fishAction(), "Pescuiește!", 200, 50, centerX, centerY);
         upgradeSpeedButton = Buttons.add(() -> upgradeSpeedAction(), "Upgrade viteză (" + upgradeSpeedCost + " puncte)", 200, 50, 100, 120);
         upgradeRarityButton = Buttons.add(() -> upgradeRarityAction(), "Upgrade șanse pești (" + upgradeRarityCost + " puncte)", 200, 50, 100, 190);
 
@@ -43,10 +48,11 @@ public class Fishing {
         scoreLabel = new Label("Scor: 0");
         upgradeLabel = new Label("Putere click: " + clickPower);
 
+       
         progressBar = new ProgressBar(0);
         progressBar.setPrefWidth(300);
-        progressBar.setLayoutX(100);
-        progressBar.setLayoutY(300);
+        progressBar.setLayoutX(centerX - 50); 
+        progressBar.setLayoutY(centerY + 70);
 
         Ui.pane.getChildren().addAll(resultLabel, scoreLabel, upgradeLabel, progressBar);
 
