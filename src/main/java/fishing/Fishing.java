@@ -2,6 +2,8 @@ package fishing;
 
 import java.util.Random;
 
+import battle.Battle;
+import clicker.Clicker;
 import graphics.Buttons;
 import graphics.Select;
 import graphics.Ui;
@@ -58,7 +60,7 @@ public class Fishing {
         resultLabel.setLayoutX(centerX - 50); 
         resultLabel.setLayoutY(centerY + 120);
 
-        scoreLabel = new Label("Scor: 0");
+        scoreLabel = new Label("Scor: "+score);
         scoreLabel.setFont(new Font("Arial", 24)); 
         scoreLabel.setTextFill(Color.WHITE); 
         scoreLabel.setLayoutX(10); 
@@ -129,32 +131,32 @@ public class Fishing {
 
 
     private static void upgradeSpeedAction() {
-        if (score >= upgradeSpeedCost) {
-            score -= upgradeSpeedCost;
+        if (Battle.money >= upgradeSpeedCost) {
+            Battle.money -= upgradeSpeedCost;
             clickPower += 5;
             regressionRate = Math.max(regressionRate - 2, 1);
             upgradeSpeedCost += 50;
-            upgradeSpeedButton.setText("Upgrade Viteză (" + upgradeSpeedCost + " puncte)");
+            upgradeSpeedButton.setText("Upgrade Viteză (" + upgradeSpeedCost + " money)");
             upgradeLabel.setText("Putere click: " + clickPower);
             scoreLabel.setText("Scor: " + score);
         } else {
-            resultLabel.setText("Nu ai suficiente puncte pentru upgrade!");
+            resultLabel.setText("Nu ai suficiente money pentru upgrade!");
         }
     }
 
     private static void upgradeRarityAction() {
-        if (score >= upgradeRarityCost) {
-            score -= upgradeRarityCost;
+        if (Clicker.bani >= upgradeRarityCost) {
+            Clicker.bani -= upgradeRarityCost;
             if (commonFishChance > 30) {
                 commonFishChance -= 5;
                 rareFishChance += 3;
                 legendaryFishChance += 2;
             }
             upgradeRarityCost += 100;
-            upgradeRarityButton.setText("Upgrade șanse pești (" + upgradeRarityCost + " puncte)");
+            upgradeRarityButton.setText("Upgrade șanse pești (" + upgradeRarityCost + " bani)");
             scoreLabel.setText("Scor: " + score);
         } else {
-            resultLabel.setText("Nu ai suficiente puncte pentru upgrade!");
+            resultLabel.setText("Nu ai suficiente bani pentru upgrade!");
         }
     }
 }
